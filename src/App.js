@@ -1,3 +1,4 @@
+// App.js
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import HomePage from './HomePage.js'
 import DiscreteLogPage from './DiscreteLogPage.js'
