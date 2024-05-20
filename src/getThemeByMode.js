@@ -7,8 +7,12 @@ export default function getThemeByMode(mode) {
         palette: {
             primary: {
                 main: blue[700],
+                light: blue[500],
+                dark: blue[900],
                 ...(mode === 'dark' && {
-                    main: blue[200],
+                    main: blue[300],
+                    light: blue[100],
+                    dark: blue[500],
                 })
             },
             text: {
@@ -18,6 +22,26 @@ export default function getThemeByMode(mode) {
                 })
             },
             divider: mode === 'light' ? alpha(grey[300], 0.5) : alpha(grey[600], 0.3),
+        },
+        components: {
+            MuiMenuItem: {
+                styleOverrides: {
+                    root: {
+                        borderRadius: '99px',
+                        fontWeight: 500,
+                        color: grey[500],
+                        '&:hover': {
+                            backgroundColor: grey[200],
+                        },
+                        ...(mode === 'dark' && {
+                            color: grey[200],
+                            '&:hover': {
+                                backgroundColor: grey[800],
+                            }
+                        }),
+                    },
+                },
+            },
         },
     }
 }
