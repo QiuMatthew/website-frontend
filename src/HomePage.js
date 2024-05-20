@@ -1,5 +1,4 @@
 // HomePage.js
-import ToggleModeButton from './ToggleModeButton.js'
 import { Navbar, Title } from './components/'
 
 export default function HomePage() {
