@@ -6,7 +6,7 @@ import { useThemeContext } from '../ThemeContext.js'
 import Logo from '../logo.svg';
 
 export default function Navbar({ navbarItems }) {
-    const { mode, toggleMode } = useThemeContext()
+    const { mode } = useThemeContext()
     const scrollToSection = (sectionID) => {
         const sectionElement = document.getElementById(sectionID);
         const offset = 128;
@@ -65,11 +65,15 @@ export default function Navbar({ navbarItems }) {
                         <Link to='/' style={{ textDecoration: 'none' }}>
                             &nbsp;&nbsp;
                             <IconButton>
-                                <img src={Logo} style={{
-                                    width: '40px',
-                                    height: '40px',
-                                    cursor: 'pointer',
-                                }} />
+                                <img 
+                                    src={Logo} 
+                                    alt='logo'
+                                    style={{
+                                        width: '40px',
+                                        height: '40px',
+                                        cursor: 'pointer',
+                                    }} 
+                                />
                             </IconButton>
                         </Link>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
