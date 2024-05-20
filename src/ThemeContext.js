@@ -1,9 +1,8 @@
 // ThemeContext.js
-import React from 'react'
 import { createContext, useState, useMemo, useContext, useEffect } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { blue } from '@mui/material/colors'
+import getThemeByMode from './getThemeByMode.js'
 
 // Create a context to hold the theme mode and a function to toggle the mode
 const ThemeContext = createContext();
@@ -22,16 +21,7 @@ export const ThemeContextProvider = ({ children }) => {
     }, [mode])
 
     // Create a MUI theme object based on the current mode
-    const theme = useMemo(() => createTheme({
-        palette: {
-            primary: {
-                main: blue[700],
-                ...(mode === 'dark' && {
-                    main: blue[200],
-                })
-            },
-        },
-    }), [mode]);
+    const theme = useMemo(() => createTheme(getThemeByMode(mode)), [mode]);
 
     // The function to toggle theme mode between 'light' and 'dark'
     const toggleMode = () => {
