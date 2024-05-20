@@ -1,6 +1,6 @@
 // HomePage.js
 import ToggleModeButton from './ToggleModeButton.js'
-import { Navbar } from './components/'
+import { Navbar, Title } from './components/'
 
 export default function HomePage() {
     const navbarItems = [
@@ -24,9 +24,8 @@ export default function HomePage() {
 
     return (
         <>
-        <p>This is HomePage.</p>
-        <ToggleModeButton />
-        <Navbar navbarItems={navbarItems} />
+            <Navbar navbarItems={navbarItems} />
+            <Title titleText="Hello, I'm" titleTextColored="Q" />
         </>
     )
 }

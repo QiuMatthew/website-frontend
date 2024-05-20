@@ -11,6 +11,12 @@ export default function getThemeByMode(mode) {
                     main: blue[200],
                 })
             },
+            text: {
+                primary: grey[900], secondary: grey[600],
+                ...(mode === 'dark' && {
+                    primary: '#ffffff', secondary: grey[400],
+                })
+            },
             divider: mode === 'light' ? alpha(grey[300], 0.5) : alpha(grey[600], 0.3),
         },
     }
