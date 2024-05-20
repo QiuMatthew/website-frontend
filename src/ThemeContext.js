@@ -24,7 +24,6 @@ export const ThemeContextProvider = ({ children }) => {
     // Create a MUI theme object based on the current mode
     const theme = useMemo(() => createTheme({
         palette: {
-            mode,
             primary: {
                 main: blue[700],
                 ...(mode === 'dark' && {
