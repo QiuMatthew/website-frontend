@@ -1,5 +1,6 @@
 // HomePage.js
-import { Navbar, Title } from './components/'
+import { Navbar, Title, Hero } from './components/'
+import HeroImage from './assets/quote.png'
 
 export default function HomePage() {
     const navbarItems = [
@@ -25,6 +26,8 @@ export default function HomePage() {
         <>
             <Navbar navbarItems={navbarItems} />
             <Title titleText="Hello, I'm" titleTextColored="Q" />
+            <Hero image={HeroImage}/>
+            
         </>
     )
 }
