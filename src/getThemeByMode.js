@@ -1,5 +1,6 @@
 // getThemeByMode.js
-import { blue } from '@mui/material/colors'
+import { blue, grey } from '@mui/material/colors'
+import { alpha } from '@mui/material'
 
 export default function getThemeByMode(mode) {
     return {
@@ -10,6 +11,7 @@ export default function getThemeByMode(mode) {
                     main: blue[200],
                 })
             },
+            divider: mode === 'light' ? alpha(grey[300], 0.5) : alpha(grey[600], 0.3),
         },
     }
 }
