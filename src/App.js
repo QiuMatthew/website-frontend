@@ -1,13 +1,17 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import HomePage from './HomePage.js'
+import DiscreteLogPage from './DiscreteLogPage.js'
+import EasySlidePage from './EasySlidePage.js'
+import ChouseisanPage from './ChouseisanPage.js'
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' exact element={<div><p>Hello, this is the homepage</p></div>} />
-                <Route path='/apps/discrete-log' exact element={<div><p>This is the discrete log page</p></div>} />
-                <Route path='/apps/easy-slide' exact element={<div><p>This is the easy slide page</p></div>} />
-                <Route path='/apps/chouseisan' exact element={<div><p>This is the chouseisan page</p></div>} />
+                <Route path='/' exact element={<HomePage />} />
+                <Route path='/apps/discrete-log' exact element={<DiscreteLogPage />} />
+                <Route path='/apps/easy-slide' exact element={<EasySlidePage />} />
+                <Route path='/apps/chouseisan' exact element={<ChouseisanPage />} />
 
                 <Route path='*' element={<Navigate to='/' replace />} />
             </Routes>
