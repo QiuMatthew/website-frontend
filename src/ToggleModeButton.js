@@ -1,12 +1,15 @@
-import PropTypes from 'prop-types';
-
+// ToggleModeButton.js
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 import ModeNightRoundedIcon from '@mui/icons-material/ModeNightRounded';
 
-function ToggleModeButton({ mode, toggleMode }) {
+import { useThemeContext } from './ThemeContext.js'
+
+function ToggleModeButton() {
+    const { mode, toggleMode } = useThemeContext()
+
     return (
         <Box sx={{ maxWidth: '32px' }}>
         <Button
@@ -25,10 +28,5 @@ function ToggleModeButton({ mode, toggleMode }) {
     </Box>
     )
 }
-
-ToggleModeButton.propTypes = {
-    mode: PropTypes.oneOf(['dark', 'light']).isRequired,
-    toggleMode: PropTypes.func.isRequired,
-};
 
 export default ToggleModeButton;
