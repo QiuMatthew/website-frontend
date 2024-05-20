@@ -4,8 +4,11 @@ import DiscreteLogPage from './DiscreteLogPage.js'
 import EasySlidePage from './EasySlidePage.js'
 import ChouseisanPage from './ChouseisanPage.js'
 
+import { ThemeContextProvider } from './ThemeContext.js'
+
 function App() {
     return (
+        <ThemeContextProvider>
         <BrowserRouter>
             <Routes>
                 <Route path='/' exact element={<HomePage />} />
@@ -16,6 +19,7 @@ function App() {
                 <Route path='*' element={<Navigate to='/' replace />} />
             </Routes>
         </BrowserRouter>
+        </ThemeContextProvider>
     )
 }
 

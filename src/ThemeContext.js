@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const ThemeContext = createContext();
 
-export const ThemeContextProvider = ({ content }) => {
+export const ThemeContextProvider = ({ children }) => {
     const [mode, setMode] = useState('light');
 
     const theme = useMemo(() => createTheme({
@@ -21,7 +21,7 @@ export const ThemeContextProvider = ({ content }) => {
     return (
         <ThemeContext.Provider value={{ mode, toggleColorMode }}>
             <ThemeProvider theme={theme}>
-                {content}
+                {children}
             </ThemeProvider>
         </ThemeContext.Provider>
     );
