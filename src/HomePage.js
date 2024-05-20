@@ -1,5 +1,5 @@
 // HomePage.js
-import { Navbar, Title, Hero } from './components/'
+import { Navbar, Title, Hero, Footer } from './components/'
 import HeroImage from './assets/quote.png'
 
 export default function HomePage() {
@@ -26,8 +26,8 @@ export default function HomePage() {
         <>
             <Navbar navbarItems={navbarItems} />
             <Title titleText="Hello, I'm" titleTextColored="Q" />
-            <Hero image={HeroImage}/>
-            
+            <Hero image={HeroImage} />
+            <Footer />
         </>
     )
 }
