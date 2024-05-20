@@ -1,13 +1,13 @@
 import { useThemeContext } from './ThemeContext.js'
-import ToggleColorMode from './ToggleColorMode.js'
+import ToggleModeButton from './ToggleModeButton.js'
 
 export default function DiscreteLogPage() {
-    const { mode, toggleColorMode } = useThemeContext()
+    const { mode, toggleMode } = useThemeContext()
 
     return (
         <>
         <p>This is DiscreteLogPage.</p>
-        <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+        <ToggleModeButton mode={mode} toggleMode={toggleMode} />
         </>
     )
 }

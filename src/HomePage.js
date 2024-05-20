@@ -1,13 +1,13 @@
 import { useThemeContext } from './ThemeContext.js'
-import ToggleColorMode from './ToggleColorMode.js'
+import ToggleModeButton from './ToggleModeButton.js'
 
 export default function HomePage() {
-    const { mode, toggleColorMode } = useThemeContext()
+    const { mode, toggleMode } = useThemeContext()
 
     return (
         <>
         <p>This is HomePage.</p>
-        <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+        <ToggleModeButton mode={mode} toggleMode={toggleMode} />
         </>
     )
 }

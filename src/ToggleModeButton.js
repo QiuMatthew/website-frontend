@@ -6,12 +6,12 @@ import Button from '@mui/material/Button';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 import ModeNightRoundedIcon from '@mui/icons-material/ModeNightRounded';
 
-function ToggleColorMode({ mode, toggleColorMode }) {
+function ToggleModeButton({ mode, toggleMode }) {
     return (
         <Box sx={{ maxWidth: '32px' }}>
         <Button
             variant="text"
-            onClick={toggleColorMode}
+            onClick={toggleMode}
             size="small"
             aria-label="button to toggle theme"
             sx={{ minWidth: '32px', height: '32px', p: '4px' }}
@@ -26,9 +26,9 @@ function ToggleColorMode({ mode, toggleColorMode }) {
     )
 }
 
-ToggleColorMode.propTypes = {
-  mode: PropTypes.oneOf(['dark', 'light']).isRequired,
-  toggleColorMode: PropTypes.func.isRequired,
+ToggleModeButton.propTypes = {
+    mode: PropTypes.oneOf(['dark', 'light']).isRequired,
+    toggleMode: PropTypes.func.isRequired,
 };
 
-export default ToggleColorMode;
+export default ToggleModeButton;
