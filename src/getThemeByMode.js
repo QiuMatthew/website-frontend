@@ -42,6 +42,16 @@ export default function getThemeByMode(mode) {
                     },
                 },
             },
+            MuiDivider: {
+                styleOverrides: {
+                    root: {
+                        borderColor: `${alpha(grey[200], 0.8)}`,
+                        ...(mode === 'dark' && {
+                        borderColor: '#364049',
+                        }),
+                    },
+                },
+            },
         },
     }
 }

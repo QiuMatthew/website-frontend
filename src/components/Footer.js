@@ -45,38 +45,38 @@ function MyFooter() {
     >
     <Container
         sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
-        textAlign: { sm: 'center', md: 'left' },
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: { xs: 4, sm: 8 },
+            py: { xs: 8, sm: 10 },
+            textAlign: { sm: 'center', md: 'left' },
         }}
     >
         <Box
-        sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            width: '100%',
-            justifyContent: 'space-between',
-        }}
+            sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+                width: '100%',
+                justifyContent: 'space-between',
+            }}
         >
         <Box
             sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 4,
-            minWidth: { xs: '100%', sm: '60%' },
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 4,
+                minWidth: { xs: '100%', sm: '60%' },
             }}
         >
             <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
             <Box sx={{ ml: '-15px' }}>
                 <img
-                src={
-                    'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
-                }
-                style={logoStyle}
-                alt="logo of sitemark"
+                    src={
+                        'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
+                    }
+                    style={logoStyle}
+                    alt="logo of sitemark"
                 />
             </Box>
             <Typography variant="body2" fontWeight={600} gutterBottom>
@@ -173,13 +173,13 @@ function MyFooter() {
         </Box>
         </Box>
         <Box
-        sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            pt: { xs: 4, sm: 8 },
-            width: '100%',
-            borderTop: '1px solid',
-            borderColor: 'divider',
+            sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                pt: { xs: 4, sm: 8 },
+                width: '100%',
+                borderTop: '1px solid',
+                borderColor: 'divider',
         }}
         >
         <div>
