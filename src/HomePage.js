@@ -1,4 +1,5 @@
 // HomePage.js
+import { Divider } from '@mui/material'
 import { Navbar, Title, Subtitle, Hero, Footer } from './components/'
 import HeroImage from './assets/quote.png'
 
@@ -28,6 +29,7 @@ export default function HomePage() {
             <Title titleText="Hello, I'm" titleTextColored="Q" />
             <Subtitle />
             <Hero image={HeroImage} />
+            <Divider />
             <Footer />
         </>
     )
