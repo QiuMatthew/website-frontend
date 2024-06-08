@@ -44,7 +44,7 @@ export default function Applications() {
                 backgroundColor:
                     mode === 'light'
                     ? '#FFFFFF'
-                    : '#06090a',
+                    : '#090E10',
                 backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat',
             }}
