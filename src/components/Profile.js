@@ -1,6 +1,6 @@
 import {useThemeContext} from '../ThemeContext.js';
 
-import { Box, Container, Typography, Grid, Card, Stack } from '@mui/material'
+import { Box, Container, Typography, Grid, Card } from '@mui/material'
 
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';

@@ -1,6 +1,6 @@
 import {useThemeContext} from '../ThemeContext.js';
 
-import { Box, Container, Typography, Grid, Card, Stack } from '@mui/material'
+import { Box, Container, Typography, Grid, Card } from '@mui/material'
 
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
