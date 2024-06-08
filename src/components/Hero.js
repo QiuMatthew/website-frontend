@@ -9,10 +9,10 @@ export default function Hero({ image }) {
             id="hero"
             sx={{
                 width: '100%',
-                backgroundImage:
+                backgroundColor:
                     mode === 'light'
-                    ? 'linear-gradient(180deg, #FFF, #FFF)'
-                    : 'linear-gradient(#090E10, #090E10)',
+                    ? '#FFFFFF'
+                    : '#090E10',
                 backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat',
             }}
