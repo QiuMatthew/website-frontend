@@ -1,6 +1,6 @@
 // HomePage.js
 import { Divider } from '@mui/material'
-import { Navbar, Title, Subtitle, Hero, About, Footer } from './components/'
+import { Navbar, Title, Subtitle, Hero, About, Profile, Footer } from './components/'
 import HeroImage from './assets/quote.png'
 
 export default function HomePage() {
@@ -31,6 +31,8 @@ export default function HomePage() {
             <Hero image={HeroImage} />
             <Divider />
             <About />
+            <Divider />
+            <Profile />
             <Divider />
             <Footer />
         </>

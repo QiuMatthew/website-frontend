@@ -2,43 +2,57 @@ import {useThemeContext} from '../ThemeContext.js';
 
 import { Box, Container, Typography, Grid, Card, Stack } from '@mui/material'
 
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
-import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
-import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
+import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
+import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
+import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
+import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
+import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
+import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 
-export default function About() {
+export default function Profile() {
     const {mode} = useThemeContext()
     const items = [
         {
-            icon: <PersonRoundedIcon />,
-            title: 'Who am I',
+            icon: <SettingsSuggestRoundedIcon />,
+            title: 'Education',
             description:
-                '24601!',
+                'Studied cyber security at USTC and now majoring in information engineering at UTokyo as a master student.',
         },
         {
-            icon: <AppsRoundedIcon />,
-            title: 'Applications',
+            icon: <ConstructionRoundedIcon />,
+            title: 'Tech interests',
             description:
-                'Get some easy-to-use tools on this website.',
+                'Cyber security, crypto assets, backend development, machine learning, fintech, etc.',
         },
         {
-            icon: <RssFeedRoundedIcon />,
-            title: 'My Blog',
+            icon: <QueryStatsRoundedIcon />,
+            title: 'Part-time',
             description:
-                'A bad pencil is better than a good memory.',
+                'Teach Probability & Statistics, Information Theory, Digital Circuit to undergraduates.',
         },
         {
-            icon: <ExploreRoundedIcon />,
-            title: 'More',
+            icon: <SupportAgentRoundedIcon />,
+            title: 'Interests',
             description:
-                'Explore the unseen, experience the unknown.',
-        }
+                'Finance, Law (preparing for BAR exam), Math.',
+        },
+        {
+            icon: <ThumbUpAltRoundedIcon />,
+            title: 'Hobbies',
+            description:
+                'Calligraphy(penmanship), harmonica, baseball, boxing.',
+        },
+        {
+            icon: <AutoFixHighRoundedIcon />,
+            title: 'Video games',
+            description:
+                'Mainly plays StarCraft II, also plays Final Fantasy XIV.',
+        },
     ];
 
     return (
         <Box
-            id="about"
+            id="profile"
             sx={{
                 width: '100%',
                 backgroundColor:
@@ -67,17 +81,18 @@ export default function About() {
                     }}
                 >
                     <Typography variant='h4' sx={{color: 'text.primary'}}>
-                        About
+                        Profile
                     </Typography>
                     <Typography variant='body1' sx={{color: 'text.secondary'}}>
-                        Here is what you can find on this site.
+                        Who am I? <br />
+                        24601!
                     </Typography>
                 </Box>
                 <Grid container spacing={2.5}>
                 {
                     items.map(
                         (item, index) => (
-                            <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: 'flex' }}>
+                            <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
                                 <Card
                                     sx={{
                                         display: 'flex',
