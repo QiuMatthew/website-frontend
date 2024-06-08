@@ -52,6 +52,22 @@ export default function getThemeByMode(mode) {
                     },
                 },
             },
+            MuiCard: {
+                styleOverrides: {
+                    root: {
+                        backgroundColor: 
+                            mode === 'light'
+                            ? grey[50]
+                            : grey[900],
+                        borderRadius: 10,
+                        border:
+                            mode === 'light'
+                            ? `1px solid ${alpha(grey[200], 0.8)}`
+                            : `1px solid ${alpha(grey[700], 0.3)}`,
+                        boxShadow: 'none',
+                    }
+                }
+            }
         },
     }
 }
