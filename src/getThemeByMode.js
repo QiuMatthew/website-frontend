@@ -2,6 +2,19 @@
 import { blue, grey } from '@mui/material/colors'
 import { alpha } from '@mui/material'
 
+export const gray = {   // this is grey but with more blue ingredient
+    50: '#FBFCFE',
+    100: '#EAF0F5',
+    200: '#D6E2EB',
+    300: '#BFCCD9',
+    400: '#94A6B8',
+    500: '#5B6B7C',
+    600: '#4C5967',
+    700: '#364049',
+    800: '#131B20',
+    900: '#090E10',
+};
+
 export default function getThemeByMode(mode) {
     return {
         palette: {
@@ -13,6 +26,14 @@ export default function getThemeByMode(mode) {
                     main: blue[300],
                     light: blue[100],
                     dark: blue[500],
+                })
+            },
+            background: {
+                primary: '#ffffff',
+                secondary: '#ffffff',
+                ...(mode === 'dark' && {
+                    primary: '#090e10',
+                    secondary: '#06090a',
                 })
             },
             text: {
@@ -29,14 +50,14 @@ export default function getThemeByMode(mode) {
                     root: {
                         borderRadius: '99px',
                         fontWeight: 500,
-                        color: grey[500],
+                        color: gray[500],
                         '&:hover': {
-                            backgroundColor: grey[200],
+                            backgroundColor: gray[200],
                         },
                         ...(mode === 'dark' && {
-                            color: grey[200],
+                            color: gray[200],
                             '&:hover': {
-                                backgroundColor: grey[800],
+                                backgroundColor: gray[800],
                             }
                         }),
                     },
@@ -45,9 +66,9 @@ export default function getThemeByMode(mode) {
             MuiDivider: {
                 styleOverrides: {
                     root: {
-                        borderColor: `${alpha(grey[200], 0.8)}`,
+                        borderColor: `${alpha(gray[200], 0.8)}`,
                         ...(mode === 'dark' && {
-                        borderColor: '#364049',
+                            borderColor: '#364049',
                         }),
                     },
                 },
@@ -55,15 +76,15 @@ export default function getThemeByMode(mode) {
             MuiCard: {
                 styleOverrides: {
                     root: {
-                        backgroundColor: 
+                        backgroundColor:
                             mode === 'light'
-                            ? grey[50]
-                            : grey[900],
+                                ? gray[50]
+                                : gray[900],
                         borderRadius: 10,
                         border:
                             mode === 'light'
-                            ? `1px solid ${alpha(grey[200], 0.8)}`
-                            : `1px solid ${alpha(grey[700], 0.3)}`,
+                                ? `1px solid ${alpha(gray[200], 0.8)}`
+                                : `1px solid ${alpha(gray[700], 0.3)}`,
                         boxShadow: 'none',
                     }
                 }

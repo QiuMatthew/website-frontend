@@ -1,4 +1,4 @@
-import {useThemeContext} from '../ThemeContext.js';
+import { useThemeContext } from '../ThemeContext.js';
 
 import { Box, Container, Typography, Grid, Card } from '@mui/material'
 
@@ -10,7 +10,7 @@ import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
 import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 
 export default function Profile() {
-    const {mode} = useThemeContext()
+    const { mode } = useThemeContext()
     const items = [
         {
             icon: <SettingsSuggestRoundedIcon />,
@@ -55,10 +55,7 @@ export default function Profile() {
             id="profile"
             sx={{
                 width: '100%',
-                backgroundColor:
-                    mode === 'light'
-                    ? '#FFFFFF'
-                    : '#06090a',
+                backgroundColor: 'background.secondary',
                 backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat',
             }}
@@ -74,48 +71,48 @@ export default function Profile() {
                     gap: { xs: 3, sm: 6 },
                 }}
             >
-                <Box 
+                <Box
                     sx={{
                         width: { sm: '100%', md: '60%' },
                         textAlign: { sm: 'left', md: 'center' },
                     }}
                 >
-                    <Typography variant='h4' sx={{color: 'text.primary'}}>
+                    <Typography variant='h4' sx={{ color: 'text.primary' }}>
                         Profile
                     </Typography>
-                    <Typography variant='body1' sx={{color: 'text.secondary'}}>
+                    <Typography variant='body1' sx={{ color: 'text.secondary' }}>
                         Who am I? <br />
                         24601!
                     </Typography>
                 </Box>
                 <Grid container spacing={2.5}>
-                {
-                    items.map(
-                        (item, index) => (
-                            <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
-                                <Card
-                                    sx={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        // evenly distribute blank spaces to each card
-                                        flexGrow: 1,
-                                        p: 3,
-                                    }}
-                                >
-                                    <Box sx={{ opacity: '50%', pb: 1 }}>
-                                        {item.icon}
-                                    </Box>
-                                    <Typography gutterBottom>
-                                        {item.title}
-                                    </Typography>
-                                    <Typography variant='body2' sx={{ color: 'text.secondary' }}>
-                                        {item.description}
-                                    </Typography>
-                                </Card>
-                            </Grid>
+                    {
+                        items.map(
+                            (item, index) => (
+                                <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
+                                    <Card
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            // evenly distribute blank spaces to each card
+                                            flexGrow: 1,
+                                            p: 3,
+                                        }}
+                                    >
+                                        <Box sx={{ opacity: '50%', pb: 1 }}>
+                                            {item.icon}
+                                        </Box>
+                                        <Typography gutterBottom>
+                                            {item.title}
+                                        </Typography>
+                                        <Typography variant='body2' sx={{ color: 'text.secondary' }}>
+                                            {item.description}
+                                        </Typography>
+                                    </Card>
+                                </Grid>
+                            )
                         )
-                    )
-                }
+                    }
                 </Grid>
             </Container>
         </Box>
