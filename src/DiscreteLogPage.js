@@ -47,7 +47,7 @@ const CalculatorForm = () => {
                 onSubmit={handleSubmit}
                 noValidate
                 autoComplete="off"
-                sx={{ pb: 6 }}
+                sx={{ pt: { xs: 7, sm: 10 }, pb: { xs: 1, sm: 2 } }}
             >
                 <TextField
                     name='g'
@@ -128,7 +128,7 @@ export default function DiscreteLogPage() {
             <Title titleText="Discrete Logarithm" titleTextColored="Calculator" />
             <Subtitle contentList={subtitleList} />
             <CalculatorForm />
-            <Divider />
+            <Divider sx={{ pt: 6 }} />
             <Footer />
         </Box>
     )

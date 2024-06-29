@@ -1,7 +1,7 @@
-import { Button, Typography, Box } from "@mui/material"
+import { Button, Typography, Box, Divider } from "@mui/material"
 import { Container } from "@mui/system"
 import { SlideshowRounded } from "@mui/icons-material"
-import { FileUploadButton, Navbar, Subtitle, ThemedBoxContainer, Title } from "./components"
+import { FileUploadButton, Footer, Navbar, Subtitle, ThemedBoxContainer, Title } from "./components"
 
 // EasySlidePage.js
 export default function EasySlidePage() {
@@ -36,22 +36,18 @@ export default function EasySlidePage() {
                         You can upload your markdown file here, be careful about sensitive information.
                     </Typography>
                 </Container>
-            </ThemedBoxContainer>
-            <ThemedBoxContainer>
                 <FileUploadButton />
-            </ThemedBoxContainer>
-            <ThemedBoxContainer>
                 <Container sx={{ pt: { xs: 1, sm: 2 }, pb: { xs: 1, sm: 2 } }}>
                     <Typography variant='body1' color='text.primary' textAlign='center'>
                         Then you can check the generated slide here
                     </Typography>
                 </Container>
-            </ThemedBoxContainer>
-            <ThemedBoxContainer>
                 <Button variant='contained' href='http://localhost:1948/slide.md' startIcon={<SlideshowRounded />}>
                     Slide Page
                 </Button>
             </ThemedBoxContainer>
+            <Divider sx={{ pt: 6 }} />
+            <Footer />
         </Box>
     )
 }
