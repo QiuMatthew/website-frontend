@@ -1,12 +1,14 @@
 import React from 'react';
 import { useThemeContext } from '../ThemeContext.js';
 
-import { Box, Container, Typography, Grid, Card, Chip, Link, Stack, Button } from '@mui/material'
+import { Box, Container, Typography, Grid, Card, Chip, Link, Stack, Button, alpha } from '@mui/material'
 
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import { brand } from '../getThemeByMode.js';
+
 
 export default function Applications() {
     const items = [
@@ -178,16 +180,23 @@ export default function Applications() {
                                         height: 'fit-content',
                                         width: '100%',
                                         background: 'none',
-                                        backgroundColor:
-                                            selectedItemIndex === index ? 'action.selected' : undefined,
-                                        borderColor: (theme) => {
-                                            if (theme.palette.mode === 'light') {
-                                                return selectedItemIndex === index
-                                                    ? 'primary.light'
-                                                    : 'grey.200';
-                                            }
-                                            return selectedItemIndex === index ? 'primary.dark' : 'grey.800';
-                                        },
+                                        backgroundColor: selectedItemIndex === index
+                                            ? mode === 'light'
+                                                ? 'brand.50'
+                                                : 'brand.900'
+                                            : undefined,
+                                        borderColor: selectedItemIndex === index
+                                            ? mode === 'light'
+                                                ? 'brand.200'
+                                                : 'brand.700'
+                                            : mode === 'light'
+                                                ? 'gray.200'
+                                                : 'gray.700',
+                                        '&:hover': {
+                                            backgroundColor: mode === 'light' ? 'brand.100' : 'brand.800',
+                                            borderColor: mode === 'light' ? 'brand.200' : 'brand.700',
+
+                                        }
                                     }}
                                 >
                                     <Box

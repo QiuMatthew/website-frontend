@@ -2,6 +2,19 @@
 import { blue, grey } from '@mui/material/colors'
 import { alpha } from '@mui/material'
 
+export const brand = {
+    50: '#F0F7FF',
+    100: '#CEE5FD',
+    200: '#9CCCFC',
+    300: '#55A6F6',
+    400: '#0A66C2',
+    500: '#0959AA',
+    600: '#064079',
+    700: '#033363',
+    800: '#02294F',
+    900: '#021F3B',
+};
+
 export const gray = {   // this is grey but with more blue ingredient
     50: '#FBFCFE',
     100: '#EAF0F5',
@@ -36,6 +49,12 @@ export default function getThemeByMode(mode) {
                     secondary: '#06090a',
                 })
             },
+            action: {
+                selected: `${alpha(brand[200], 0.2)}`,
+                ...(mode === 'dark' && {
+                    selected: `${alpha(brand[800], 0.2)}`,
+                }),
+            },
             text: {
                 primary: grey[900], secondary: grey[600],
                 ...(mode === 'dark' && {
@@ -43,6 +62,30 @@ export default function getThemeByMode(mode) {
                 })
             },
             divider: mode === 'light' ? alpha(grey[300], 0.5) : alpha(grey[600], 0.3),
+            gray: {
+                50: gray[50],
+                100: gray[100],
+                200: gray[200],
+                300: gray[300],
+                400: gray[400],
+                500: gray[500],
+                600: gray[600],
+                700: gray[700],
+                800: gray[800],
+                900: gray[900],
+            },
+            brand: {
+                50: brand[50],
+                100: brand[100],
+                200: brand[200],
+                300: brand[300],
+                400: brand[400],
+                500: brand[500],
+                600: brand[600],
+                700: brand[700],
+                800: brand[800],
+                900: brand[900],
+            },
         },
         components: {
             MuiMenuItem: {
@@ -68,7 +111,7 @@ export default function getThemeByMode(mode) {
                     root: {
                         borderColor: `${alpha(gray[200], 0.8)}`,
                         ...(mode === 'dark' && {
-                            borderColor: '#364049',
+                            borderColor: gray[700],
                         }),
                     },
                 },
