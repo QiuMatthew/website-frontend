@@ -1,11 +1,9 @@
 // DiscreteLogPage.js
 import { useState } from 'react'
 import { Box, TextField, Button, Divider } from '@mui/material'
-import { useThemeContext } from './ThemeContext.js'
 import { Navbar, Title, Subtitle, ThemedBoxContainer, Footer } from './components/'
 
 const CalculatorForm = () => {
-    const { mode } = useThemeContext()
     const [formData, setFormData] = useState({
         g: '',
         h: '',
