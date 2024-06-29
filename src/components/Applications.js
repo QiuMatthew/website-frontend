@@ -50,7 +50,7 @@ export default function Applications() {
 
     return (
         <Box
-            id="applications"
+            id="application"
             sx={{
                 width: '100%',
                 backgroundColor:

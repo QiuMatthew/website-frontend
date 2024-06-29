@@ -7,7 +7,7 @@ export default function HomePage() {
     const navbarItems = [
         {
             text: 'Home',
-            sectionID: 'home'
+            sectionID: 'title',
         },
         {
             text: 'About',
