@@ -10,24 +10,28 @@ export default function HomePage() {
             sectionID: 'home'
         },
         {
-            text: 'About', 
+            text: 'About',
             sectionID: 'about',
         },
         {
-            text: 'Application', 
+            text: 'Application',
             sectionID: 'application',
         },
         {
-            text: 'Profile', 
+            text: 'Profile',
             sectionID: 'profile',
         },
+    ]
+    const subtitleLines = [
+        "Science is about ANSWERING questions.",
+        "But what about ASKING questions?",
     ]
 
     return (
         <>
             <Navbar navbarItems={navbarItems} />
             <Title titleText="Hello, I'm" titleTextColored="Q" />
-            <Subtitle />
+            <Subtitle contentList={subtitleLines} />
             <Hero image={HeroImage} />
             <Divider />
             <About />

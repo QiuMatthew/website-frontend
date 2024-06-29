@@ -10,16 +10,16 @@ import { ThemeContextProvider } from './ThemeContext.js'
 function App() {
     return (
         <ThemeContextProvider>
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' exact element={<HomePage />} />
-                <Route path='/apps/discrete-log' exact element={<DiscreteLogPage />} />
-                <Route path='/apps/easy-slide' exact element={<EasySlidePage />} />
-                <Route path='/apps/chouseisan' exact element={<ChouseisanPage />} />
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' exact element={<HomePage />} />
+                    <Route path='/apps/discrete-log' exact element={<DiscreteLogPage />} />
+                    <Route path='/apps/easy-slide' exact element={<EasySlidePage />} />
+                    <Route path='/apps/chouseisan' exact element={<ChouseisanPage />} />
 
-                <Route path='*' element={<Navigate to='/' replace />} />
-            </Routes>
-        </BrowserRouter>
+                    <Route path='*' element={<Navigate to='/' replace />} />
+                </Routes>
+            </BrowserRouter>
         </ThemeContextProvider>
     )
 }
