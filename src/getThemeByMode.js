@@ -131,7 +131,21 @@ export default function getThemeByMode(mode) {
                         boxShadow: 'none',
                     }
                 }
-            }
+            },
+            MuiTextField: {
+                styleOverrides: {
+                    root: {
+                        '& fieldset': {
+                            borderColor: gray[300],
+                        },
+                        ...(mode === 'dark' && {
+                            '& fieldset': {
+                                borderColor: gray[600],
+                            },
+                        }),
+                    }
+                }
+            },
         },
     }
 }
