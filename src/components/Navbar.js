@@ -14,7 +14,7 @@ export default function Navbar({ navbarItems }) {
             const targetScroll = sectionElement.offsetTop - offset;
             sectionElement.scrollIntoView({ behavior: 'smooth' });
             window.scrollTo({
-                top: targetScroll, 
+                top: targetScroll,
                 behavior: 'smooth',
             });
         }
@@ -41,16 +41,16 @@ export default function Navbar({ navbarItems }) {
                         borderRadius: '999px',
                         bgcolor:
                             mode === 'light'
-                            ? 'rgba(255, 255, 255, 0.4)'
-                            : 'rgba(0, 0, 0, 0.4)',
+                                ? 'rgba(255, 255, 255, 0.4)'
+                                : 'rgba(0, 0, 0, 0.4)',
                         backdropFilter: 'blur(24px)',
                         maxHeight: 40,
                         border: '1px solid',
                         borderColor: 'divider',
                         boxShadow:
                             mode === 'light'
-                            ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
-                            : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)'
+                                ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
+                                : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)'
                     }}
                 >
                     <Box
@@ -65,14 +65,14 @@ export default function Navbar({ navbarItems }) {
                         <Link to='/' style={{ textDecoration: 'none' }}>
                             &nbsp;&nbsp;
                             <IconButton>
-                                <img 
-                                    src={Logo} 
+                                <img
+                                    src={Logo}
                                     alt='logo'
                                     style={{
                                         width: '40px',
                                         height: '40px',
                                         cursor: 'pointer',
-                                    }} 
+                                    }}
                                 />
                             </IconButton>
                         </Link>

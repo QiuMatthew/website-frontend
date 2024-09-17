@@ -10,14 +10,11 @@ import Typography from '@mui/material/Typography';
 
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
+import BlogIcon from '@mui/icons-material/RssFeed'
+
+import Logo from '../logo.svg';
 
 import { useThemeContext } from '../ThemeContext.js'
-
-const logoStyle = {
-    width: '140px',
-    height: 'auto',
-};
 
 function Copyright() {
     return (
@@ -72,11 +69,13 @@ export default function Footer() {
                         <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
                             <Box sx={{ ml: '-15px' }}>
                                 <img
-                                    src={
-                                        'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
-                                    }
-                                    style={logoStyle}
-                                    alt="logo of sitemark"
+                                    src={Logo}
+                                    style={{
+                                        width: '50px',
+                                        height: '50px',
+                                        cursor: 'pointer',
+                                    }}
+                                    alt="logo"
                                 />
                             </Box>
                             <Typography variant="body2" color="text.primary" fontWeight={600} gutterBottom>
@@ -113,6 +112,26 @@ export default function Footer() {
                         }}
                     >
                         <Typography variant="body2" color="text.primary" fontWeight={600}>
+                            About
+                        </Typography>
+                        <Link color="text.secondary" href="https://qiumatthew.github.io/">
+                            Blog
+                        </Link>
+                        <Link color="text.secondary" href="https://github.com/QiuMatthew">
+                            GitHub
+                        </Link>
+                        <Link color="text.secondary" href="https://linkedin.com/">
+                            LinkedIn
+                        </Link>
+                    </Box>
+                    <Box
+                        sx={{
+                            display: { xs: 'none', sm: 'flex' },
+                            flexDirection: 'column',
+                            gap: 1,
+                        }}
+                    >
+                        <Typography variant="body2" color="text.primary" fontWeight={600}>
                             Applications
                         </Typography>
                         <Link color="text.secondary" href="/apps/easy-slide">
@@ -124,51 +143,8 @@ export default function Footer() {
                         <Link color="text.secondary" href="/apps/chouseisan">
                             Chouseisan Scheduler
                         </Link>
-                        <Link color="text.secondary" href="#">
-                            FAQs
-                        </Link>
-                    </Box>
-                    <Box
-                        sx={{
-                            display: { xs: 'none', sm: 'flex' },
-                            flexDirection: 'column',
-                            gap: 1,
-                        }}
-                    >
-                        <Typography variant="body2" color="text.primary" fontWeight={600}>
-                            Blog
-                        </Typography>
-                        <Link color="text.secondary" href="#">
-                            Tech
-                        </Link>
-                        <Link color="text.secondary" href="#">
-                            Law
-                        </Link>
-                        <Link color="text.secondary" href="#">
-                            Cooking
-                        </Link>
-                        <Link color="text.secondary" href="#">
-                            Travel
-                        </Link>
-                    </Box>
-                    <Box
-                        sx={{
-                            display: { xs: 'none', sm: 'flex' },
-                            flexDirection: 'column',
-                            gap: 1,
-                        }}
-                    >
-                        <Typography variant="body2" color="text.primary" fontWeight={600}>
-                            About
-                        </Typography>
-                        <Link color="text.secondary" href="#">
-                            Contact
-                        </Link>
-                        <Link color="text.secondary" href="#">
-                            Privacy Policy
-                        </Link>
-                        <Link color="text.secondary" href="#">
-                            Terms of Service
+                        <Link color="text.secondary" href="/apps/crypto-algo">
+                            Cryptology Algorithms
                         </Link>
                     </Box>
                 </Box>
@@ -205,19 +181,19 @@ export default function Footer() {
                     >
                         <IconButton
                             color="inherit"
+                            href="https://instagram.com/"
+                            aria-label="Instagram"
+                            sx={{ alignSelf: 'center' }}
+                        >
+                            <BlogIcon />
+                        </IconButton>
+                        <IconButton
+                            color="inherit"
                             href="https://github.com/"
                             aria-label="GitHub"
                             sx={{ alignSelf: 'center' }}
                         >
                             <FacebookIcon />
-                        </IconButton>
-                        <IconButton
-                            color="inherit"
-                            href="https://twitter.com/"
-                            aria-label="X"
-                            sx={{ alignSelf: 'center' }}
-                        >
-                            <TwitterIcon />
                         </IconButton>
                         <IconButton
                             color="inherit"
