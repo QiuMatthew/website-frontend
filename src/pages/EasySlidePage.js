@@ -1,7 +1,7 @@
 import { Button, Typography, Box, Divider } from "@mui/material"
 import { Container } from "@mui/system"
 import { SlideshowRounded } from "@mui/icons-material"
-import { FileUploadButton, Footer, Navbar, Subtitle, ThemedBoxContainer, Title } from "./components"
+import { FileUploadButton, Footer, Navbar, Subtitle, ThemedBoxContainer, Title } from "../components"
 
 // EasySlidePage.js
 export default function EasySlidePage() {

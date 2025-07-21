@@ -1,5 +1,5 @@
 import { Box, Button, Container, Divider, Typography } from "@mui/material"
-import { Footer, Navbar, Subtitle, ThemedBoxContainer, Title } from "./components"
+import { Footer, Navbar, Subtitle, ThemedBoxContainer, Title } from "../components"
 
 // ChouseisanPage.js
 export default function ChouseisanPage() {

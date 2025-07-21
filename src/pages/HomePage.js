@@ -1,7 +1,7 @@
 // HomePage.js
 import { Divider } from '@mui/material'
-import { Navbar, Title, Subtitle, Hero, About, Applications, Profile, Footer } from './components/'
-import HeroImage from './assets/quote.png'
+import { Navbar, Title, Subtitle, Hero, About, Applications, Profile, Footer } from '../components/'
+import HeroImage from '../assets/quote.png'
 
 export default function HomePage() {
     const navbarItems = [

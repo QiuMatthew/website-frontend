@@ -9,3 +9,4 @@ export { default as Footer } from './Footer.js'
 
 export { default as ThemedBoxContainer } from './ThemedBoxContainer.js'
 export { default as FileUploadButton } from './FileUploadButton.js'
+export { default as ErrorBoundary } from './ErrorBoundary.js'

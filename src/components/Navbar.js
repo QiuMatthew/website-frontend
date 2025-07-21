@@ -79,6 +79,7 @@ export default function Navbar({ navbarItems }) {
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {navbarItems.map((item, index) => (
                                 <MenuItem
+                                    key={index}
                                     onClick={() => scrollToSection(item.sectionID)}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
@@ -102,9 +103,10 @@ export default function Navbar({ navbarItems }) {
                             color="primary"
                             variant="text"
                             size="small"
-                            component="a"
-                            href="/material-ui/getting-started/templates/sign-in/"
-                            target="_blank"
+                            onClick={() => {
+                                // TODO: Implement sign in functionality
+                                console.log('Sign in clicked');
+                            }}
                         >
                             Sign in
                         </Button>
@@ -112,9 +114,10 @@ export default function Navbar({ navbarItems }) {
                             color="primary"
                             variant="contained"
                             size="small"
-                            component="a"
-                            href="/material-ui/getting-started/templates/sign-up/"
-                            target="_blank"
+                            onClick={() => {
+                                // TODO: Implement sign up functionality
+                                console.log('Sign up clicked');
+                            }}
                         >
                             Sign up
                         </Button>
