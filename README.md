@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Website Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-based frontend for my personal website, built with Material UI and deployed using Docker containers.
 
-## Available Scripts
+## 🚀 Deployment
 
-In the project directory, you can run:
+- **Status**: Live and running on GCP
+- **Container Image**: `ghcr.io/qiumatthew/website-frontend:latest`
+- **Architecture**: Docker container with nginx
 
-### `npm start`
+## 📦 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React 18** with React Router
+- **Material UI** for components
+- **nginx** for production serving
+- **Docker** for containerized deployment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Development
 
-### `npm test`
+### Local Development
+```bash
+npm start
+```
+Runs the app at [http://localhost:3000](http://localhost:3000) with hot reload.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Testing
+```bash
+npm test
+```
 
-### `npm run build`
+### Building for Production
+```bash
+# Option 1: Build container image
+./build.sh
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Option 2: Build static files only
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🐳 Docker Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Files
+- `Dockerfile.prod` - Production container with nginx
+- `nginx.conf` - nginx configuration for React Router
+- `build.sh` - Build and push script
 
-### `npm run eject`
+### Container Workflow
+1. **Develop locally**: `npm start`
+2. **Build and push**: `./build.sh` 
+3. **Deploy on server**: Pull and run the image
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Manual Docker Commands
+```bash
+# Build for production
+docker buildx build \
+  --platform linux/amd64 \
+  -f Dockerfile.prod \
+  -t ghcr.io/qiumatthew/website-frontend:latest \
+  --push .
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Run locally (for testing)
+docker run -p 80:80 ghcr.io/qiumatthew/website-frontend:latest
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Project Structure
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Route components
+├── App.js         # Main app with routing
+└── index.js       # Entry point
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+nginx.conf         # Production web server config
+Dockerfile.prod    # Production container build
+build.sh          # Build automation script
+```
 
-## Learn More
+## 🔄 Deployment Process
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This frontend is part of a microservices architecture:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Development**: Work locally with `npm start`
+2. **Build**: Use `./build.sh` to create and push container image
+3. **Deploy**: Use [website-deployment](https://github.com/QiuMatthew/website-deployment) repo to orchestrate services
 
-### Code Splitting
+## 📚 Key Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **React Router**: Client-side routing with nginx fallback
+- **Material UI**: Consistent design system
+- **Production optimized**: Gzipped, cached static assets
+- **Container-ready**: Runs on any Docker-enabled server
 
-### Analyzing the Bundle Size
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is a personal project, but feel free to explore the code for learning purposes!
