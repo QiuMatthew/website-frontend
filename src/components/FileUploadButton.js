@@ -1,4 +1,4 @@
-import { Button, styled } from "@mui/material";
+import { Button, styled, Alert, Snackbar } from "@mui/material";
 import { useState } from "react";
 import { CloudUploadRounded } from "@mui/icons-material";
 
@@ -18,6 +18,9 @@ export default function FileUploadButton() {
     // support file upload
     const [file, setFile] = useState(null)
     const [message, setMessage] = useState('')
+    const [openSnackbar, setOpenSnackbar] = useState(false)
+    const [severity, setSeverity] = useState('success')
+    
     const handleFileChange = (event) => {
         setFile(event.target.files[0])
     }
@@ -25,6 +28,8 @@ export default function FileUploadButton() {
         const selectedFile = event.target.files[0]
         if (!selectedFile) {
             setMessage("Please select a file first")
+            setSeverity('error')
+            setOpenSnackbar(true)
             return
         }
 
@@ -40,25 +45,46 @@ export default function FileUploadButton() {
             if (response.ok) {
                 const result = await response.text()
                 setMessage(result)
+                setSeverity('success')
+                setOpenSnackbar(true)
             } else {
                 setMessage("Failed to upload file.")
+                setSeverity('error')
+                setOpenSnackbar(true)
             }
         } catch (error) {
             setMessage('Error: ' + error.message)
+            setSeverity('error')
+            setOpenSnackbar(true)
         }
+    }
+    
+    const handleCloseSnackbar = () => {
+        setOpenSnackbar(false)
     }
 
     return (
-        <Button
-            component="label"
-            role={undefined}
-            variant="contained"
-            tabIndex={-1}
-            startIcon={<CloudUploadRounded />}
-        >
-            Upload file
-            <input type="file" hidden onChange={handleSubmit} />
-            <VisuallyHiddenInput type="file" />
-        </Button>
+        <>
+            <Button
+                component="label"
+                role={undefined}
+                variant="contained"
+                tabIndex={-1}
+                startIcon={<CloudUploadRounded />}
+            >
+                Upload file
+                <input type="file" hidden onChange={handleSubmit} accept=".md" />
+            </Button>
+            <Snackbar 
+                open={openSnackbar} 
+                autoHideDuration={6000} 
+                onClose={handleCloseSnackbar}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            >
+                <Alert onClose={handleCloseSnackbar} severity={severity} sx={{ width: '100%' }}>
+                    {message}
+                </Alert>
+            </Snackbar>
+        </>
     );
 }
