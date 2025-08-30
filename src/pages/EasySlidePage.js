@@ -42,8 +42,8 @@ export default function EasySlidePage() {
                         Then you can check the generated slide here
                     </Typography>
                 </Container>
-                <Button variant='contained' href='http://localhost:1948/slide.md' startIcon={<SlideshowRounded />}>
-                    Slide Page
+                <Button variant='contained' href='/slides/' target='_blank' startIcon={<SlideshowRounded />}>
+                    View Slides
                 </Button>
             </ThemedBoxContainer>
             <Divider sx={{ pt: 6 }} />

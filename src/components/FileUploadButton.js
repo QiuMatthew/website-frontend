@@ -32,7 +32,7 @@ export default function FileUploadButton() {
         formData.append('file', selectedFile)
 
         try {
-            const response = await fetch("http://localhost:8080/upload", {
+            const response = await fetch("/api/slides/upload", {
                 method: 'POST',
                 body: formData,
             })
